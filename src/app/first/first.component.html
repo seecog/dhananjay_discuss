@@ -1,0 +1,25 @@
+<p>
+Name : <input class="form-control" [(ngModel)]="product.name">
+<br>
+Cost : <input class="form-control" [(ngModel)]="product.cost">
+<br>
+Company : <input class="form-control" [(ngModel)]="product.company">
+</p>
+<p>
+  <button (click)="saveProduct()">Save</button> 
+  <button (click)="saveProduct()">Update</button> 
+</p>
+
+<hr>
+<table>
+<th>Name</th><th>Cost</th><th>Company</th><th>Action</th>
+<tr *ngFor="let x of products;let i = index;">
+<td>{{x.data.name}}</td>
+<td>{{x.data.cost}}</td>
+<td>{{x.data.company}}</td>
+<td>
+  <button (click)="delProduct(x.id)">Delete</button> | 
+  <button (click)="editProduct(x)">Edit</button>
+</td>
+</tr>
+</table>

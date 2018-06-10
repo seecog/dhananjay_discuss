@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let x of emps">
+<a [routerLink]="['/info',x.id]">{{x.data.name}}</a>
+  </li>
+</ul>

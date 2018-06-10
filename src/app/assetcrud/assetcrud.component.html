@@ -1,0 +1,93 @@
+<h1>Aseet List</h1>
+<div class="col-lg-12">
+  <div class="form-group">
+    <label>Asset Name</label>
+    <input [(ngModel)]="asset.asset_name" class="form-control">
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="form-group">
+    <label>Asset Area</label>
+    <input [(ngModel)]="asset.asset_area" class="form-control">
+  </div>
+</div>
+
+<div class="col-lg-12">
+  <div class="form-group">
+    <label>Asset Cost</label>
+    <input [(ngModel)]="asset.asset_cost" class="form-control">
+  </div>
+</div>
+
+<div class="col-lg-12">
+  <div class="form-group">
+    <label>Asset Pic</label>
+    <input [(ngModel)]="asset.asset_pic" class="form-control">
+  <img *ngIf="asset.asset_pic" [src]="asset.asset_pic" width="50" height="50">
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="form-group">
+    <label>Asset Dealer</label>
+    <input [(ngModel)]="asset.asset_dealer" class="form-control">
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="form-group">
+    <label>Asset Contact</label>
+    <input [(ngModel)]="asset.asset_contact" class="form-control">
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="form-group">
+    <label>Asset Country</label>
+    <select [(ngModel)]="asset.asset_country" class="form-control" >
+      <option value="1">India</option>
+      <option value="2">USA</option>
+      <option value="3">Pakstan</option>
+      <option value="4">China</option>
+    </select>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="form-group">
+    <label>Asset State</label>
+    <select [(ngModel)]="asset.asset_state" class="form-control" >
+      <option value="1">Haryana</option>
+      <option value="2">Punjab</option>
+      <option value="3">Orissa</option>
+      <option value="4">Karnataka</option>
+    </select>
+  </div>
+</div>
+<div class="col-lg-12">
+  <div class="form-group">
+    <label>Asset Status:</label>
+    <input type="radio" [(ngModel)]="asset.asset_status" value="1" >Old
+    <input type="radio" [(ngModel)]="asset.asset_status" value="2" >New
+    
+  </div>
+</div>
+<div class="col-lg-12">
+  <button class="btn btn-primary" *ngIf="btn_stt" (click)="save()">Save</button>
+  <button class="btn btn-danger" *ngIf="!btn_stt" (click)="update()">Update</button>
+  
+</div>
+
+<div class="col-lg-12">
+  <table class="table">
+    <th>Pic</th>
+    <th>Name</th>
+    <th>Cost</th>
+    <th>Action</th>
+    <tr *ngFor="let x of assets,let i=index">
+      <td>{{x.asset_name}}</td>
+      <td>
+        <img [src]="x.asset_pic" width="50" height="50">
+      </td>
+      <td>{{x.asset_cost}}</td>
+      <button (click)="editasset(x)">Edit</button>
+      <button (click)="deleteasset(i)">Delete</button>
+    </tr>
+  </table>
+</div>

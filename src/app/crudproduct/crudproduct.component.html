@@ -1,0 +1,21 @@
+<p>
+  Product Name : <input [(ngModel)]="product.name">
+</p>
+<p>
+  Product Cost : <input [(ngModel)]="product.cost">
+</p>
+<button *ngIf="btn_stt" (click)="save()">Save Product</button>
+<button *ngIf="!btn_stt" (click)="update()">Update Product</button>
+<hr>
+<table class="table">
+  <th>Index</th><th>Name</th><th>Cost</th><th>Action</th>
+  <tr *ngFor="let x of products;let i=index;">
+    <td>{{i}}</td>
+<td>{{x.name}}</td>
+<td>{{x.cost}}</td>
+<td>
+<button class="btn btn-primary" (click)="deleteProduct(i)">Delete</button>
+ | <button class="btn btn-primary" (click)="editProduct(x)">Edit</button>
+</td>
+  </tr>
+</table>
