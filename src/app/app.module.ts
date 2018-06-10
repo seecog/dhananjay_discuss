@@ -22,6 +22,8 @@ import { PowerPipe } from './pipes/power.pipe';
 import { LimitPipe } from './pipes/limit.pipe';
 import { FirstComponent } from './first/first.component';
 import { CitiesComponent } from './cities/cities.component';
+import { TestserviceComponent } from './services/testservice/testservice.component';
+import { Testservice2Component } from './services/testservice2/testservice2.component';
 // const myRoute : Routes = [
 // {path : 'home',component:HomeComponent,canActivate : [AuthGuard]},
 // {path : 'users',component:UsersComponent}
@@ -64,7 +66,9 @@ const myRoute : Routes = [
     PowerPipe,
     LimitPipe,
     FirstComponent,
-    CitiesComponent
+    CitiesComponent,
+    TestserviceComponent,
+    Testservice2Component
   ],
   imports: [
     BrowserModule,
